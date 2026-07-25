@@ -1,0 +1,1 @@
+Implementing AI receptionists and voice assistants in multi-location restaurants to reduce labor costs and improve operational efficiency.

@@ -1,0 +1,22 @@
+name: how-to-create-a-devsecops-ci-cd-pipeline
+description: Implementing DevSecOps practices in a CI/CD pipeline to enhance security
+  by integrating security tools and processes at various stages of the pipeline.
+keywords:
+- DevSecOps
+- CI/CD pipeline
+- static code analysis
+- secret scanning
+- software composition analysis
+- static application security testing
+- dynamic application security testing
+- software bill of materials
+- Docker Scout
+- vulnerability scanning
+- security tools
+- shift left security
+difficulty: intermediate
+prerequisites: []
+sources:
+- title: How to Create a DevSecOps CI/CD Pipeline
+  channel: DevOps Journey
+  link: https://www.youtube.com/watch?v=mZoOnWjv_QM

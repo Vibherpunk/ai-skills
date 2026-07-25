@@ -1,0 +1,1 @@
+The transcript outlines a comprehensive workflow for automating property management tasks using AI agents. It details the process from receiving maintenance requests from tenants to handling vendor communications, approvals, and payments, all managed by AI agents with minimal human intervention.

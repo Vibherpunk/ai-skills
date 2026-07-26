@@ -1,0 +1,20 @@
+name: Optimizing Tiny AI Models for Edge and Robotics Applications
+description: This skill provides a comprehensive guide to optimizing and deploying
+  tiny AI models (50M-500M parameters) for edge devices and robotics, focusing on
+  quantization, fine-tuning, and synthetic data generation.
+keywords:
+- tiny models
+- edge AI
+- quantization
+- fine-tuning
+- synthetic data
+- robotics
+difficulty: advanced
+prerequisites:
+- Basic understanding of AI model architectures
+- Familiarity with edge computing constraints
+- Experience with model fine-tuning and quantization techniques
+sources:
+- title: "Why Large? Tiny LMs & Agents on Edge/Robotics \u2014 Cormac Brick, Google"
+  channel: AI Engineer
+  link: https://www.youtube.com/watch?v=hacEQHHhu2Q

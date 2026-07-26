@@ -1,0 +1,19 @@
+name: AI Model Comparison for Image Generation
+description: This skill enables you to compare different AI image generation models
+  using the same prompts and settings to evaluate their performance and quality. It
+  includes selecting models, configuring settings, generating images, and analyzing
+  results.
+keywords:
+- AI model comparison
+- image generation
+- prompt engineering
+- quality evaluation
+difficulty: intermediate
+prerequisites:
+- Basic understanding of AI image generation models
+- Familiarity with prompt engineering
+- Experience with image quality assessment
+sources:
+- title: Which AI Image Model Creates the Best Results | SeaArt
+  channel: AI Mastery Tutorial
+  link: https://www.youtube.com/watch?v=hVXHl0R5MuA

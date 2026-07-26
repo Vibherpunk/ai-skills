@@ -1,0 +1,19 @@
+name: Implementing Evals-Driven Development for a Mental Health AI Coach
+description: This skill teaches you how to build and evaluate a mental health AI coach
+  using evals-driven development, focusing on safety, modularity, and clinical grounding.
+keywords:
+- mental health
+- AI coach
+- evals-driven development
+- guardrails
+- clinical grounding
+difficulty: advanced
+prerequisites:
+- basic understanding of AI models
+- familiarity with mental health concepts
+- experience with modular system design
+sources:
+- title: "Evals-Driven Development for a Mental Health AI Coach \u2014 Akele Reed\
+    \ & Dave Revere, SonderMind"
+  channel: AI Engineer
+  link: https://www.youtube.com/watch?v=O72p-rBb2bA

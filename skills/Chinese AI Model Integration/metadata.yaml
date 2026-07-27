@@ -1,0 +1,19 @@
+name: Chinese AI Model Integration
+description: A comprehensive skill for integrating Chinese AI models into workflows,
+  including selection, deployment, and testing strategies.
+keywords:
+- Chinese AI
+- model integration
+- DeepSeek
+- Kimi K3
+- Qwen
+- GLM
+difficulty: advanced
+prerequisites:
+- basic understanding of AI models
+- familiarity with API integrations
+- knowledge of model deployment
+sources:
+- title: 'US AI Dominance Is Over: Here''s Why'
+  channel: AI News & Strategy Daily | Nate B Jones
+  link: https://www.youtube.com/watch?v=JBzz53HqMEs

@@ -1,0 +1,28 @@
+name: Solve Contamination-Resistant Long-Horizon Coding Tasks
+description: This skill enables an AI agent to effectively approach and solve complex,
+  multi-file software engineering tasks within a contamination-resistant benchmarking
+  environment like DeepSWE. It emphasizes understanding high-level objectives, exploring
+  repository conventions, generating robust solutions focused on observable behavior,
+  and performing self-verification.
+keywords:
+- AI coding
+- software engineering
+- long-horizon tasks
+- benchmarking
+- DeepSWE
+- contamination resistance
+- code generation
+- code testing
+- problem-solving
+- observable behavior
+difficulty: Advanced
+prerequisites:
+- Proficiency in code generation across multiple languages (Python, JavaScript, TypeScript,
+  Rust, Go)
+- Ability to understand and interact with file systems and Git repositories
+- Knowledge of software development best practices (testing, code structure, conventions)
+- Capability for multi-step reasoning and planning
+sources:
+- title: "DeepSWE: A Contamination-Resistant Coding Benchmark \u2014 James Shi, Datacurve"
+  channel: AI Engineer
+  link: https://www.youtube.com/watch?v=Yk87oUPVaxU

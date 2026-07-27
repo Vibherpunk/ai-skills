@@ -1,0 +1,19 @@
+name: Implementing AI Safety Guardrails
+description: A comprehensive skill for implementing guardrails to protect generative
+  AI systems from hallucinations and prompt injection attacks.
+keywords:
+- AI safety
+- guardrails
+- hallucinations
+- prompt injection
+- input validation
+- output validation
+- retrieval grounding
+difficulty: intermediate
+prerequisites:
+- basic understanding of generative AI
+- familiarity with AI system architecture
+sources:
+- title: 'GenAI Guardrails: Protecting Systems from Hallucinations & Prompt Injection'
+  channel: Practical GenAI
+  link: https://www.youtube.com/watch?v=twcbsjEzgcc

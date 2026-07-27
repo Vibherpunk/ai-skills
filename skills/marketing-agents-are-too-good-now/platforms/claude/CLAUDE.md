@@ -1,14 +1,28 @@
-# Claude Code Custom Instructions - Marketing Agents Are Too Good Now
-> The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+# Marketing Agents Are Too Good Now
 
-The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+Build AI marketing agents that research pain points, generate creatives, publish to Facebook Ads, and optimize in a continuous loop — powered by a unified data warehouse.
 
-# Detailed Guidelines
+## Architecture
+- **Data Pipeline:** Airbyte → ClickHouse (unify FB Ads, GA, Stripe, CRM)
+- **Agent Hosting:** Railway/Heroku/cloud
+- **FB API:** Write-only (publish, turn off, promote)
 
-## Sources
+## Workflow
+1. Research pain points (Reddit, Perplexity) → Rank by frequency
+2. Generate creative (Kai AI, Nano Banana, HeyGen, Seedance)
+3. Publish to FB Ads via Marketing API
+4. 2-3 day learning window → Auto-optimize
+5. Feedback loop: analyze what works, generate more like it
 
-# Video Sources
+## Entropy Prevention
+- Facebook Ads Library for competitor creative
+- YouTube/podcast transcripts for fresh insights
 
-The following curated videos were synthesized to create this skill:
+## Quick Start
+1. Set up data pipeline
+2. Connect data sources
+3. Deploy agent code to cloud
+4. Connect FB Marketing API
+5. Start with 2 ad sets/day, 5 ads/ad set
 
-1. **[Marketing Agents Are Too Good Now](https://www.youtube.com/watch?v=U2hogriGmEw)** by Greg Isenberg
+Source: https://youtu.be/U2hogriGmEw — Cody Schneider × Greg Isenberg

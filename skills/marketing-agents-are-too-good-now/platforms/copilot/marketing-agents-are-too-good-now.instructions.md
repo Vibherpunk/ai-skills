@@ -1,14 +1,20 @@
-# Copilot Instructions: Marketing Agents Are Too Good Now
-Description: The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+# Agentic Marketing Teams — Marketing Agent Build Guide
 
-The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+## Infrastructure
+- Data pipeline: Airbyte (self-hosted)
+- Data warehouse: ClickHouse (self-hosted)
+- Agent hosting: Railway, Heroku, cloud
+- Facebook Marketing API (write-only)
 
-## Reference Guides
+## 5-Step Agent Workflow
+1. **Research:** Scrape Reddit, use Perplexity, rank pain points by frequency
+2. **Create:** Kai AI (images), Nano Banana (statics), HeyGen/Seedance (video)
+3. **Publish:** FB Ads via Marketing API (2 ad sets/day, 5 ads/ad set)
+4. **Optimize:** 2-3 day learning window, kill losers, promote winners
+5. **Loop:** Database of what worked → generate more like best performers
 
-### Sources
+## Entropy
+- Pull competitor ads from Facebook Ads Library
+- Mine YouTube/podcast transcripts for fresh angles
 
-# Video Sources
-
-The following curated videos were synthesized to create this skill:
-
-1. **[Marketing Agents Are Too Good Now](https://www.youtube.com/watch?v=U2hogriGmEw)** by Greg Isenberg
+Source: https://youtu.be/U2hogriGmEw

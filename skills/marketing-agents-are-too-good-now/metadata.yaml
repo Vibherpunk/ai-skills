@@ -1,19 +1,17 @@
 name: marketing-agents-are-too-good-now
-description: The transcript outlines a comprehensive method for setting up and deploying
-  marketing agents that autonomously manage Facebook ads. The process involves researching
-  customer pain points, generating ad creatives, deploying ads via the Facebook Marketing
-  API, and using a data pipeline and warehouse to optimize ad performance based on
-  live business data.
+description: "Build and deploy AI marketing agents that research, create, publish, and optimize ad campaigns autonomously — based on the Cody Schneider framework from the Greg Isenberg podcast."
 keywords:
 - marketing agents
 - Facebook ads
 - data pipeline
 - data warehouse
-- AI automation
-- ad creative generation
 - Facebook Marketing API
-- customer pain points
-- ad optimization
+- ad creative generation
+- autonomous decision-making
+- real-time data optimization
+- agentic marketing
+- agent jockey
+- Andromeda
 difficulty: intermediate
 prerequisites: []
 sources:

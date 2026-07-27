@@ -1,19 +1,13 @@
 ---
-description: The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
-globs: *
+description: Build and deploy AI marketing agents that research, create, publish, and optimize ad campaigns autonomously.
+globs: 
 ---
+# Agentic Marketing Teams
 
-# Marketing Agents Are Too Good Now
+Build AI marketing agents with:
+- **Data Pipeline:** Airbyte → ClickHouse (unify FB Ads, GA, Stripe, CRM)
+- **Agent Workflow:** Research pain points → Generate creative → Publish to FB Ads → Monitor & optimize → Feedback loop
+- **Entropy Prevention:** Competitor ad library + YouTube/podcast transcripts
+- **FB API:** Write-only (publish, turn off, promote)
 
-The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
-
-
-# Supporting Documentation
-
-## Sources
-
-# Video Sources
-
-The following curated videos were synthesized to create this skill:
-
-1. **[Marketing Agents Are Too Good Now](https://www.youtube.com/watch?v=U2hogriGmEw)** by Greg Isenberg
+Source: https://youtu.be/U2hogriGmEw — Cody Schneider × Greg Isenberg

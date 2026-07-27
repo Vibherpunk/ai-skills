@@ -1,0 +1,14 @@
+# Claude Code Custom Instructions - Marketing Agents Are Too Good Now
+> The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+
+The transcript outlines a comprehensive method for setting up and deploying marketing agents that autonomously manage Facebook ads. The process involves researching customer pain points, generating ad creatives, deploying ads via the Facebook Marketing API, and using a data pipeline and warehouse to optimize ad performance based on live business data.
+
+# Detailed Guidelines
+
+## Sources
+
+# Video Sources
+
+The following curated videos were synthesized to create this skill:
+
+1. **[Marketing Agents Are Too Good Now](https://www.youtube.com/watch?v=U2hogriGmEw)** by Greg Isenberg

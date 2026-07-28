@@ -1,0 +1,23 @@
+name: marketing-agent-deployment
+description: "Step-by-step deployment walkthrough for the self-hosted marketing agent stack — from zero to a running agent on open-source infrastructure."
+keywords:
+- deployment
+- self-hosted
+- infrastructure
+- Docker
+- setup
+- walkthrough
+- Airbyte
+- ClickHouse
+- SearXNG
+- Ollama
+- ComfyUI
+difficulty: intermediate
+prerequisites:
+- Docker
+- VPS or server with 4GB+ RAM
+- Facebook Ads account
+sources:
+- title: Marketing Agents Are Too Good Now
+  channel: Greg Isenberg
+  link: https://www.youtube.com/watch?v=U2hogriGmEw

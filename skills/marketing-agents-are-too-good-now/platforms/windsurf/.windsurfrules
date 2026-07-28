@@ -1,8 +1,11 @@
-# Agentic Marketing Teams
-Build and deploy AI marketing agents that research, create, publish, and optimize ad campaigns autonomously.
+# Agentic Marketing Teams — Self-Hosted Edition
 
-Stack: Airbyte → ClickHouse (data), Railway/Heroku (hosting), FB Marketing API (publish)
-Workflow: Research → Generate creative → Publish → Optimize → Feedback loop
-Entropy: Competitor ads + YouTube/podcast transcripts
+Build AI marketing agents on open-source infrastructure. Replace $920/mo proprietary stack with $5-20/mo self-hosted.
 
-Source: https://youtu.be/U2hogriGmEw — Cody Schneider × Greg Isenberg
+Stack: Airbyte → ClickHouse (data) | ComfyUI (images) | Wav2Lip + Coqui (video) | SearXNG + Ollama (research) | Coolify/Docker (hosting)
+
+Weekly: Research pain points → Generate creative → Publish FB Ads → Optimize → Inject entropy
+
+FB API: Write-only, rate-limited, start PAUSED. Cap: $50/day.
+
+Source: https://youtu.be/U2hogriGmEw

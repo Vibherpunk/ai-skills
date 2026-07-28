@@ -1,19 +1,27 @@
 name: marketing-agents-are-too-good-now
-description: "Build and deploy AI marketing agents that research, create, publish, and optimize ad campaigns autonomously — based on the Cody Schneider framework from the Greg Isenberg podcast."
+description: "Build and deploy AI marketing agents that autonomously research, create, publish, and optimize ad campaigns — entirely self-hosted using open-source infrastructure. Replaces Kai AI, Nano Banana, HeyGen, Seedance, Perplexity, and Railway/Heroku with free, self-hosted alternatives."
 keywords:
 - marketing agents
 - Facebook ads
-- data pipeline
-- data warehouse
-- Facebook Marketing API
-- ad creative generation
-- autonomous decision-making
-- real-time data optimization
-- agentic marketing
-- agent jockey
+- open-source
+- self-hosted
+- ComfyUI
+- Stable Diffusion
+- Airbyte
+- ClickHouse
+- Coolify
+- SearXNG
+- Ollama
 - Andromeda
-difficulty: intermediate
-prerequisites: []
+- data pipeline
+- ad automation
+- agentic marketing
+difficulty: advanced
+prerequisites:
+- Docker
+- Python 3.10+
+- Facebook Ads account
+- GPU recommended for ComfyUI
 sources:
 - title: Marketing Agents Are Too Good Now
   channel: Greg Isenberg

@@ -1,87 +1,152 @@
-# Agentic Marketing Teams
+# Agentic Marketing Teams — Fully Self-Hosted Edition
 
-> Build AI marketing agents that research pain points, generate ad creative, publish to Facebook Ads, and optimize in a continuous feedback loop — all powered by a unified data warehouse.
+> Build AI marketing agents that research pain points, generate ad creative, publish to Facebook Ads, and optimize in a continuous feedback loop — all on **self-hosted, open-source infrastructure**. No vendor lock-in.
 
-**By Cody Schneider** (CompaniesGraph) × **Greg Isenberg** — https://youtu.be/U2hogriGmEw
+**Based on:** Cody Schneider (CompaniesGraph) × Greg Isenberg — https://youtu.be/U2hogriGmEw
 
-## What is a Marketing Agent?
+---
 
-A real marketing agent has **three essential components:**
+## Architecture Overview
 
-1. **Unified data** — access to all business data in one place via a data pipeline and warehouse
-2. **Autonomous decision-making** — operates on a cadence with a thinking loop, making decisions off live data
-3. **Cloud-hosted code** — code running in the cloud, not a linear Zapier workflow
+```
+┌──────────────────────────────────────────────────────────────┐
+│              AGENT ORCHESTRATOR                              │
+│   (Python loop — hosted on Coolify / Docker VPS)             │
+└──────────────────────────────────────────────────────────────┘
+         │                      │                      │
+         ▼                      ▼                      ▼
+┌─────────────────┐  ┌────────────────────┐  ┌──────────────────┐
+│   DATA LAYER    │  │   CREATIVE LAYER   │  │  PUBLISH LAYER   │
+│  Airbyte ──►    │  │  ComfyUI ──►       │  │  FB Marketing    │
+│  ClickHouse     │  │  SDXL / FLUX       │  │  API (write-only)│
+│  SearXNG        │  │  Wav2Lip + Coqui   │  │                  │
+│  Ollama (LLM)   │  │  AnimateDiff       │  │                  │
+└─────────────────┘  └────────────────────┘  └──────────────────┘
+```
 
-> Most people claiming "autonomous marketing agents" are running simple linear automations. A real agent has a feedback loop, accesses live business data, and makes decisions autonomously.
+The only non-switchable dependency is the Facebook Marketing API — the ad channel itself.
+
+---
+
+## What is a Marketing Agent? (Three Components)
+
+1. **Unified data** — all business data in one place (Airbyte → ClickHouse, both open-source)
+2. **Autonomous decision loop** — thinking cadence off live data (your Python agent code)
+3. **Cloud-hosted code** — runs 24/7 (Coolify or Docker on a $5–$20/mo VPS)
+
+> Not a Zapier workflow. A loop that reads data, decides, publishes, observes, adjusts.
+
+---
+
+## Proprietary Tool Replacements
+
+| Proprietary Tool | Cost | Open-Source Replacement | Setup |
+|----------------|------|------------------------|-------|
+| Kai AI | $$/mo | ComfyUI + Stable Diffusion XL | `comfy --skip-prompt install` |
+| Google Nano Banana | $$/mo | ComfyUI + SDXL + ControlNet | Same ComfyUI install |
+| HeyGen | $120/mo | Wav2Lip + Coqui TTS | `docker pull` + `pip install TTS` |
+| Seedance | $$/mo | Stable Video Diffusion / AnimateDiff | Via ComfyUI AnimateDiff nodes |
+| Perplexity Pro | $20/mo | SearXNG + Ollama | `docker run searxng` + `ollama pull` |
+| Railway / Heroku | $20+/mo | Coolify / Docker VPS | `docker compose up -d` |
+| **Total proprietary** | **$920+/mo** | **$5–$20/mo (VPS only)** | |
+
+---
 
 ## Infrastructure Stack
 
-### Data Pipeline & Warehouse
+### Data Pipeline: Airbyte + ClickHouse
 
-Unify all data sources so the agent understands all channels in context.
+```bash
+docker run -d --name airbyte -p 8000:8000 airbyte/airbyte
+docker run -d --name clickhouse -p 8123:8123 clickhouse/clickhouse-server
+```
 
-| Tool | Role |
-|------|------|
-| **Airbyte** (open source, self-hosted) | Data pipeline with pre-built connectors |
-| **ClickHouse** (open source, self-hosted) | Data warehouse |
+Connect: Facebook Ads, Google Analytics, PostHog, Stripe, CRM → Airbyte → ClickHouse.
 
-**Data sources to unify:** Facebook Ads, Google Analytics, PostHog, HubSpot/CRM, Stripe.
+### Creative Generation: ComfyUI
 
-### Agent Hosting
+```bash
+pipx install comfy-cli
+comfy --skip-prompt install --nvidia
+comfy model download --url "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors" --relative-path models/checkpoints
+comfy launch --background
+```
 
-Deploy as code in the cloud — Railway, Heroku, or any cloud provider.
+### Research: SearXNG + Ollama
 
-### Facebook Marketing API
+```bash
+docker run -d --name searxng -p 4000:8080 searxng/searxng
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.2
+```
 
-**Use the API only for:** Publishing content, turning off underperforming ads, promoting winning ads. Do NOT pull bulk data.
+### Avatar Video: Wav2Lip + Coqui TTS
 
-## The Complete Agent Workflow
+```bash
+pip install TTS
+docker pull ghcr.io/wan-h/wav2lip:latest
+tts --text "Your ad copy" --model_name tts_models/en/ljspeech/tacotron2-DDC --out_path output.wav
+```
 
-### Step 1: Research Pain Points
-Scrape Reddit for real customer complaints. Use Perplexity for quick synthesis. Rank by frequency — most-referenced pain points become ad hooks.
+### Agent Hosting: Coolify or Docker VPS
 
-### Step 2: Generate Creative
-- **Kai AI** — unified image/video generation
-- **Google Nano Banana** — static ad creative
-- **HeyGen** — AI avatar UGC video
-- **Seedance** — emerging video (~9 sec limit)
-- Use a vision model to verify brand compliance
+Coolify is an open-source PaaS (Heroku alternative) you self-host. One-click deploy from GitHub.
 
-### Step 3: Publish to Facebook Ads
-Agent creates ad sets and ads via Marketing API. Example: 2 ad sets/day, 5 ads/ad set.
+---
 
-### Step 4: Monitor & Optimize
-2-3 day learning window. Turn off worst performers, keep winners live. Winners pool competes for budget.
+## Weekly Agent Cycle
 
-### Step 5: Feedback Loop
-Build a database of prompts, scripts, and performance data. Agent analyzes what's working and generates more like the best performers.
+### Monday: Research Pain Points
 
-## Solving the Entropy Problem
+Scrape Reddit via SearXNG → Extract pains via Ollama LLM → Rank by frequency
 
-Marketing agents get stuck thinking the same way. Two solutions:
-1. **Competitor Ad Library** — Pull competitor ads via Facebook Ads Library API
-2. **YouTube/Podcast Transcripts** — Mine niche channels for insights
+### Tuesday-Wednesday: Generate Creative
+
+ComfyUI for images (5 per pain point) + Wav2Lip for avatar video → Brand compliance check via vision model
+
+### Thursday-Sunday: Publish & Optimize
+
+Ads created in PAUSED status → 48-hour learning window → Kill bottom 30% → Promote top winners → Store winning patterns
+
+---
+
+## Facebook Marketing API Safety
+
+**DO:** Create ads, turn off losers, promote winners (write-only)
+**DO NOT:** Bulk-pull millions of rows of data (gets accounts banned)
+
+Rate limit: 0.5s between calls. Start ads in PAUSED for human review.
+
+---
+
+## Budget Controls
+
+- Daily cap: $50/day
+- Max CPA: $15
+- Max ads per batch: 10
+- Learning window: 48 hours minimum
+- Human review gate: ads start PAUSED
+
+---
+
+## Monthly Cost Comparison (Self-Hosted)
+
+| Component | Proprietary | Self-Hosted |
+|-----------|------------|-------------|
+| Data pipeline | $500+ (Fivetran) | $0 (Airbyte) |
+| Warehouse | $200+ (Snowflake) | $0 (ClickHouse) |
+| Image gen | $60+ (Kai/Midjourney) | $0 (ComfyUI) |
+| Video avatars | $120+ (HeyGen) | $0 (Wav2Lip) |
+| Research | $20 (Perplexity) | $0 (SearXNG) |
+| Hosting | $20+ (Railway) | $5-20 (VPS) |
+| **Total** | **$920+/mo** | **$5-20/mo** |
+
+---
 
 ## Key Principles
 
 1. Marketing is continuous, not campaign-based
-2. Test 10-15-20 variations of the same ad with different positioning
-3. Let the market tell you what works — don't impose ideas, test them
-4. Start with a human in the loop, then graduate to full autonomy
-
-## Quick Start
-
-1. Identify product/service and target customer
-2. Research customer pain points via Reddit scraping
-3. Set up data pipeline (Airbyte → ClickHouse)
-4. Connect data sources (Facebook Ads, Google Analytics, Stripe, CRM)
-5. Build agent with thinking loop reading from the warehouse
-6. Connect to Facebook Marketing API (write-only)
-7. Define creative generation pipeline (image + video)
-8. Set optimization cadence (2-3 day learning window)
-9. Implement entropy prevention
-10. Start with 2 ad sets/day, 5 ads/ad set, iterate
-
-## References
-- **Cody Schneider** — CEO of CompaniesGraph (companiesgraph.com)
-- **Source:** https://youtu.be/U2hogriGmEw
+2. Test 10-15-20 variations before giving up
+3. Let the market tell you what works — test everything
+4. Start with human review, graduate to autonomy
+5. Self-host everything you can

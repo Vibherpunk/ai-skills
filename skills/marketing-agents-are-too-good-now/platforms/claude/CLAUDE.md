@@ -1,28 +1,22 @@
-# Marketing Agents Are Too Good Now
+# Agentic Marketing Teams — Self-Hosted
 
-Build AI marketing agents that research pain points, generate creatives, publish to Facebook Ads, and optimize in a continuous loop — powered by a unified data warehouse.
+Build AI marketing agents on open-source infrastructure.
 
-## Architecture
-- **Data Pipeline:** Airbyte → ClickHouse (unify FB Ads, GA, Stripe, CRM)
-- **Agent Hosting:** Railway/Heroku/cloud
-- **FB API:** Write-only (publish, turn off, promote)
+## Stack
+- Data pipeline: Airbyte → ClickHouse
+- Creative gen: ComfyUI (SDXL/FLUX) + Wav2Lip + Coqui TTS
+- Research: SearXNG + Ollama
+- Hosting: Coolify or Docker VPS
 
-## Workflow
-1. Research pain points (Reddit, Perplexity) → Rank by frequency
-2. Generate creative (Kai AI, Nano Banana, HeyGen, Seedance)
-3. Publish to FB Ads via Marketing API
-4. 2-3 day learning window → Auto-optimize
-5. Feedback loop: analyze what works, generate more like it
+## Weekly Workflow
+1. Research pain points via SearXNG/Reddit + Ollama LLM
+2. Generate 5 static images + 1 avatar video per pain point via ComfyUI
+3. Publish to FB Ads API (write-only, rate-limited, start PAUSED)
+4. 48h learning → kill bottom 30% → promote top 3
+5. Inject competitor creative via FB Ads Library + YouTube transcripts
 
-## Entropy Prevention
-- Facebook Ads Library for competitor creative
-- YouTube/podcast transcripts for fresh insights
+## Budget
+- $50/day cap, $15 max CPA, 10 max ads/batch
+- Human review gate before ads go live
 
-## Quick Start
-1. Set up data pipeline
-2. Connect data sources
-3. Deploy agent code to cloud
-4. Connect FB Marketing API
-5. Start with 2 ad sets/day, 5 ads/ad set
-
-Source: https://youtu.be/U2hogriGmEw — Cody Schneider × Greg Isenberg
+Source: https://youtu.be/U2hogriGmEw

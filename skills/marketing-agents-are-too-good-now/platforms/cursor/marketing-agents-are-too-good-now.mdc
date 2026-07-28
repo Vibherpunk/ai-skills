@@ -1,13 +1,15 @@
 ---
-description: Build and deploy AI marketing agents that research, create, publish, and optimize ad campaigns autonomously.
+description: Build and deploy self-hosted AI marketing agents on open-source infrastructure.
 globs: 
 ---
-# Agentic Marketing Teams
+# Agentic Marketing Teams — Self-Hosted
 
-Build AI marketing agents with:
-- **Data Pipeline:** Airbyte → ClickHouse (unify FB Ads, GA, Stripe, CRM)
-- **Agent Workflow:** Research pain points → Generate creative → Publish to FB Ads → Monitor & optimize → Feedback loop
-- **Entropy Prevention:** Competitor ad library + YouTube/podcast transcripts
-- **FB API:** Write-only (publish, turn off, promote)
+Replace $920/mo of proprietary tools with $5-20/mo open-source stack.
+
+**Data:** Airbyte → ClickHouse | **Images:** ComfyUI + SDXL | **Video:** Wav2Lip + Coqui TTS | **Research:** SearXNG + Ollama | **Hosting:** Coolify/Docker
+
+**Weekly cycle:** Research pain points (Mon) → Create ads (Tue-Wed) → Publish & optimize (Thu-Sun)
+
+**FB API:** Write-only, 0.5s rate limit, start PAUSED. Daily cap $50.
 
 Source: https://youtu.be/U2hogriGmEw — Cody Schneider × Greg Isenberg

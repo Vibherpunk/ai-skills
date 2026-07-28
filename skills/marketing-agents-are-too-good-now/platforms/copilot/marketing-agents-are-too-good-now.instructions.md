@@ -1,20 +1,20 @@
-# Agentic Marketing Teams — Marketing Agent Build Guide
+# Agentic Marketing Teams — Self-Hosted Edition
 
-## Infrastructure
-- Data pipeline: Airbyte (self-hosted)
-- Data warehouse: ClickHouse (self-hosted)
-- Agent hosting: Railway, Heroku, cloud
-- Facebook Marketing API (write-only)
+## Full Open-Source Stack
+- **Data:** Airbyte (pipeline) → ClickHouse (warehouse) — replaces Fivetran/Snowflake
+- **Images:** ComfyUI + Stable Diffusion XL / FLUX — replaces Kai AI/Nano Banana
+- **Video/Avatar:** Wav2Lip (lip sync) + Coqui TTS (voice) — replaces HeyGen/Seedance
+- **Research:** SearXNG (web search) + Ollama (local LLM) — replaces Perplexity
+- **Hosting:** Coolify (open-source PaaS) or Docker on $5-20/mo VPS — replaces Railway/Heroku
 
-## 5-Step Agent Workflow
-1. **Research:** Scrape Reddit, use Perplexity, rank pain points by frequency
-2. **Create:** Kai AI (images), Nano Banana (statics), HeyGen/Seedance (video)
-3. **Publish:** FB Ads via Marketing API (2 ad sets/day, 5 ads/ad set)
-4. **Optimize:** 2-3 day learning window, kill losers, promote winners
-5. **Loop:** Database of what worked → generate more like best performers
+## Cost Savings
+- $920+/mo proprietary → $5-20/mo (VPS only)
 
-## Entropy
-- Pull competitor ads from Facebook Ads Library
-- Mine YouTube/podcast transcripts for fresh angles
+## Weekly Workflow
+1. Research pain points (SearXNG + Ollama LLM)
+2. Generate creative (ComfyUI bulk + Wav2Lip video)
+3. Publish to FB Ads (write-only API, start PAUSED)
+4. 48h learning window → auto-optimize
+5. Entropy prevention (competitor library + transcripts)
 
 Source: https://youtu.be/U2hogriGmEw

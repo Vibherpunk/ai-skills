@@ -1,62 +1,46 @@
 ---
-name: marketing-agents-are-too-good-now
 description: >-
-  Build and deploy AI marketing agents that research, create, publish, and optimize
-  ad campaigns autonomously — based on the Cody Schneider framework from the Greg Isenberg podcast.
+  Build and deploy AI marketing agents that autonomously research, create, publish,
+  and optimize ad campaigns — entirely self-hosted using open-source infrastructure.
+name: marketing-agents-are-too-good-now
+tags:
+- marketing agents
+- Facebook ads
+- open-source
+- self-hosted
+- ComfyUI
+- Stable Diffusion
+- Airbyte
+- ClickHouse
+- Coolify
 ---
 
-# Agentic Marketing Teams
+# Agentic Marketing Teams — Self-Hosted Edition
 
-> Build AI marketing agents that research pain points, generate ad creative, publish to Facebook Ads, and optimize in a continuous feedback loop — all powered by a unified data warehouse.
+Build AI marketing agents with all open-source infrastructure.
 
-**By Cody Schneider** (CompaniesGraph) × **Greg Isenberg** — https://youtu.be/U2hogriGmEw
+## Stack
+- **Data:** Airbyte → ClickHouse (replace Fivetran/Snowflake)
+- **Images:** ComfyUI + SDXL/FLUX (replace Kai AI/Nano Banana)
+- **Video/Avatar:** Wav2Lip + Coqui TTS (replace HeyGen/Seedance)
+- **Research:** SearXNG + Ollama (replace Perplexity)
+- **Hosting:** Coolify / Docker VPS (replace Railway/Heroku)
 
-## What is a Marketing Agent?
+## Weekly Cycle
+1. **Mon:** Research pain points (SearXNG + Ollama LLM)
+2. **Tue-Wed:** Generate creative (ComfyUI bulk gen + Wav2Lip videos)
+3. **Thu-Sun:** Publish to FB Ads → 48h learning window → auto-optimize
 
-A real marketing agent has **three essential components:**
+## Safety
+- Start ads PAUSED for human review
+- Daily cap: $50 | Max CPA: $15 | Max ads/batch: 10
+- FB API: write-only, 0.5s rate limit
 
-1. **Unified data** — access to all business data via a data pipeline and warehouse (Airbyte → ClickHouse)
-2. **Autonomous decision-making** — operates on a cadence with a thinking loop off live data
-3. **Cloud-hosted code** — code running in the cloud, not a linear Zapier workflow
+## Quick Deploy
+```bash
+docker compose up -d  # Airbyte, ClickHouse, ComfyUI, SearXNG, Ollama
+comfy model download --url <SDXL_URL> --relative-path models/checkpoints
+python3 agent.py
+```
 
-## The Complete Agent Workflow
-
-### Step 1: Research Pain Points
-Scrape Reddit for real customer complaints. Use Perplexity for quick synthesis. Rank by frequency.
-
-### Step 2: Generate Creative
-Kai AI (images/video), Google Nano Banana (statics), HeyGen (AI avatar UGC), Seedance (emerging video). Verify brand compliance with a vision model.
-
-### Step 3: Publish to Facebook Ads
-Agent creates ad sets and ads via Marketing API. 2 ad sets/day, 5 ads/ad set.
-
-### Step 4: Monitor & Optimize
-2-3 day learning window. Turn off worst performers, keep winners live.
-
-### Step 5: Feedback Loop
-Database of prompts, scripts, and performance data. Agent analyzes what's working and generates more like the best performers.
-
-## Solving Entropy
-1. **Competitor Ad Library** — Pull ads via Facebook Ads Library API
-2. **YouTube/Podcast Transcripts** — Mine niche channels for insights
-
-## Infrastructure
-- **Data Pipeline:** Airbyte (open source, self-hosted)
-- **Data Warehouse:** ClickHouse (open source, self-hosted)
-- **Agent Hosting:** Railway, Heroku, or any cloud provider
-- **FB API:** Write-only (publish, turn off, promote). No bulk data pulls.
-
-## Quick Start
-1. Research pain points
-2. Set up Airbyte → ClickHouse
-3. Connect data sources (FB Ads, GA, Stripe, CRM)
-4. Build agent with thinking loop
-5. Connect FB Marketing API (write-only)
-6. Set creative pipeline (image + video)
-7. Set 2-3 day optimization cadence
-8. Implement entropy prevention
-9. Start with 2 ad sets/day, 5 ads/ad set
-
-## References
-- **Cody Schneider** — CompaniesGraph (companiesgraph.com)
-- **Source:** https://youtu.be/U2hogriGmEw
+Source: https://youtu.be/U2hogriGmEw

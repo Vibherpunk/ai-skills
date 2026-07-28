@@ -1,0 +1,32 @@
+name: Run Local LLMs with llama.cpp or vLLM
+description: This skill enables an AI agent to understand, select, and deploy local
+  Large Language Models (LLMs) using either llama.cpp for consumer-grade hardware
+  and offline use, or vLLM for high-performance, scalable production environments,
+  leveraging their respective optimizations and OpenAI-compatible endpoints.
+keywords:
+- local LLM
+- llama.cpp
+- vLLM
+- quantization
+- GGUF
+- continuous batching
+- paged attention
+- speculators
+- AI agent
+- RAG
+- code assistant
+- privacy
+- cost savings
+- inference
+- GPU
+- CPU
+- OpenAI API
+difficulty: Intermediate
+prerequisites:
+- Basic understanding of Large Language Models (LLMs)
+- Familiarity with API interactions (e.g., REST APIs)
+- Knowledge of hardware concepts (CPU, GPU, VRAM)
+sources:
+- title: 'Llama.cpp vs vLLM: Which Local LLM Engine Actually Scales?'
+  channel: IBM Technology
+  link: https://www.youtube.com/watch?v=0ujh7hfutq0

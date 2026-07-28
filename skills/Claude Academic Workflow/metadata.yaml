@@ -1,0 +1,20 @@
+name: Claude Academic Workflow
+description: A comprehensive skill for leveraging Claude's academic and research capabilities,
+  including project management, skill integration, connector usage, and co-work features.
+keywords:
+- Claude
+- academic
+- research
+- project
+- skill
+- connector
+- co-work
+difficulty: intermediate
+prerequisites:
+- basic understanding of AI tools
+- familiarity with academic workflows
+sources:
+- title: The Real Reason Researchers Are Switching to Claude in 2026 (Projects, Skills,
+    Cowork, Consensus)
+  channel: Andy Stapleton
+  link: https://www.youtube.com/watch?v=QqNXf7DfSpA

@@ -1,0 +1,17 @@
+name: ObsidianNoteManagement
+description: A comprehensive skill for managing notes in Obsidian, including installation,
+  note creation, linking, and integrating AI tools like Claude.
+keywords:
+- Obsidian
+- note-taking
+- AI integration
+- Claude
+- Zapier
+difficulty: beginner
+prerequisites:
+- basic computer literacy
+- familiarity with markdown
+sources:
+- title: How to Use Obsidian (Beginner Tutorial)
+  channel: Kevin Stratvert
+  link: https://www.youtube.com/watch?v=lsytBlAdJK4

@@ -1,0 +1,19 @@
+name: Forward Deployed Engineering with AI Agents
+description: A comprehensive skill for deploying AI agents to understand, re-engineer,
+  and optimize enterprise workflows, ensuring seamless integration with existing systems
+  of record.
+keywords:
+- forward deployed engineering
+- AI agents
+- workflow optimization
+- enterprise integration
+- process re-engineering
+difficulty: advanced
+prerequisites:
+- Understanding of enterprise systems (e.g., Salesforce, SAP)
+- Basic knowledge of AI model training and deployment
+- Familiarity with workflow automation and process mapping
+sources:
+- title: "AI tools for Forward Deployed Engineering \u2014 Vasuman Moza, Varick Agents"
+  channel: AI Engineer
+  link: https://www.youtube.com/watch?v=l0FLhNqBOic

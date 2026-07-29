@@ -1,0 +1,18 @@
+name: Collaborative Agent Productivity with Buzz
+description: A skill enabling AI agents to enhance team collaboration and productivity
+  using Buzz, an agentic Slack alternative built on open protocols.
+keywords:
+- collaboration
+- productivity
+- Buzz
+- agentic workflows
+- team management
+difficulty: intermediate
+prerequisites:
+- Basic understanding of team collaboration tools
+- Familiarity with AI agents and their capabilities
+- Knowledge of open protocols like Nostr
+sources:
+- title: 'Jack Dorsey''s Buzz: The New Hermes Agent?'
+  channel: Greg Isenberg
+  link: https://www.youtube.com/watch?v=_jGSgzBkzrY
